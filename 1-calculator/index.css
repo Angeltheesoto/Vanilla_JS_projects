@@ -1,0 +1,114 @@
+* {
+ margin: 0;
+ padding: 0;
+ box-sizing: border-box;
+ font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+}
+body {
+ margin-top: 10rem;
+ background-color: #ddd;
+}
+
+
+#calc-container {
+ margin: 0 auto;
+ width: 320px;
+ height: 510px;
+ border: 1px solid #1e1e1e;
+ border-radius: 10px;
+ background-color: rgb(236, 236, 236);
+ box-shadow: 10px 10px 10px 0px #1e1e1e;
+ position: relative;
+}
+
+#history {
+  text-align: right;
+  height: 20px;
+  margin: 0 20px;
+  padding-top: 30px;
+  font-size: 15px;
+  color: #919191;
+}
+
+#output {
+ text-align: right;
+ height: 60px;
+ margin: 30px 20px;
+ font-size: 30px;
+}
+
+#result {
+ height: 120px;
+ text-align: right;
+}
+
+#keyboard {
+ height: 400px;
+ padding: 0 7px;
+}
+
+.operator, .number, .empty {
+ width: 50px;
+ height: 50px;
+ margin: 13px;
+ float: left;
+ border-radius: 50%;
+ border-width: 0;
+ font-weight: bold;
+ font-size: 1.1rem;
+ background-color: #ddd;
+}
+
+.empty {
+ background-color: transparent;
+}
+
+.number {
+ background-color: transparent;
+}
+
+.number:hover {
+ color: gray;
+ cursor: pointer;
+ transition: 0.2s all;
+ transform: scale(1.1);
+ border: 1px solid #1e1e1e;
+}
+
+.operator:hover {
+  color: white;
+  cursor: pointer;
+  transition: 0.2s all;
+  transform: scale(1.1);
+  border: 1px solid #1e1e1e;
+}
+
+button:nth-child(4){
+ font-size: 20px;
+ background-color: #20b2aa;
+}
+
+button:nth-child(8) {
+ font-size: 20px;
+ background-color: #ffa500;
+}
+
+button:nth-child(12) {
+ font-size: 20px;
+ background-color: #f08080;
+}
+
+button:nth-child(16) {
+ font-size: 20px;
+ background-color: #7d93e0;
+}
+
+button:nth-child(20) {
+ font-size: 20px;
+ background-color: #9477af;
+}
+
+.operator:active, .number:active {
+ transition: 0.2s all;
+ transform: scale(.9);
+}
