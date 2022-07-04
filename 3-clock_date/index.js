@@ -49,20 +49,27 @@ todayDate();
 
 
 // TIME -
-//  variables
-const time = document.querySelector('.time');
-let nycTime = date.toLocaleTimeString();
+function showTime() {
+ const timeZone = document.querySelector('.time');
+ let dateTwo = new Date();
+ let session = 'am';
+ let h = dateTwo.getHours();
+ let m = dateTwo.getMinutes();
+ let s = dateTwo.getSeconds();
 
-function currentTime() {
- time.innerHTML = nycTime;
-};
-currentTime();
+ if(h == 0){
+  h = 12;
+ }
+ if(h > 12){
+  h = h - 12;
+  session = 'pm';
+ };
 
-let myTime = setTimeout()
-
-
-
-
-
-
-
+ h = (h < 10) ? '0' + h : h;
+ m = (m < 10) ? '0' + m : m;
+ s = (s < 10) ? '0' + s : s;
+ let time = `${h} : ${m} : ${s} ${session}`;
+ timeZone.textContent = time;
+ setTimeout(showTime, 1000);
+}
+showTime();

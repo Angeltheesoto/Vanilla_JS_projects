@@ -43,7 +43,7 @@ function timing() {
   hour = 0;
  }
  // Adds 0 in front if number is less than 10.
- // Ternary js = if - else if - return
+ // Ternary js = if - return - else(if)
  let h = hour < 10 ? '0' + hour : hour;
  let m = minute < 10 ? '0' + minute : minute;
  let s = second < 10 ? '0' + second : second;
