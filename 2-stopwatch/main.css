@@ -11,14 +11,22 @@
  --color-black: #1e1e1e;
 }
 
+body {
+ margin-top: 6rem;
+ /* background-color: darkcyan; */
+ background-color: black;
+}
+
 .container {
  margin: 0 auto;
  width: 27rem;
- height: 100vh;
- border: 3px solid black;
- border-radius: 10px;
+ height: 50vh;
+ border-radius: 30px;
  text-align: center;
- background-color: rgb(214, 255, 246);
+ color: #eee;
+ background-color: #75777e34;
+ box-shadow: 10px 10px 30px #1e1e1e, 5px 5px 10px white
+  inset;
 }
 
 .text-container, .stopwatch-container {
@@ -29,11 +37,11 @@
 }
 
 .text-container {
- top: 15%;
+ top: 25%;
 }
 
 .stopwatch-container {
- top: 25%;
+ top: 35%;
 }
 
 h1 {
@@ -47,12 +55,6 @@ h2 {
  font-weight: 100;
 }
 
-hr {
- text-align: center;
- height: 10px;
- border: 30px solid rgb(143, 245, 223);
-}
-
 .stopwatch-container {
  margin-top: 3rem;
 }
@@ -63,22 +65,25 @@ hr {
 }
 
 button {
+ color: #eee;
  padding: 10px 1.5rem;
  margin: 3px;
  font-size: 1rem;
  border-radius: 10px;
- border: 1px solid black;
+ border: 1px solid #eee;
  background-color: transparent;
 }
 
 button:hover {
  cursor: pointer;
- background-color: rgba(255, 255, 255, 0.644);
+ color: #1e1e1e;
+ background-color: rgba(255, 255, 255, 0.644);;
  transition: all .25s ease-in-out;
 }
 
-button:focus {
- transition: all .25s ease-in-out;
- transform: scale(.9);
+button:active {
+ transition: all .1s ease-in-out;
+ transform: scale(.98);
+ background-color: rgba(230, 230, 230, 0.644);
 }
 
