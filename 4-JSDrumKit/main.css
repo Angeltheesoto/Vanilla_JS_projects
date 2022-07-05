@@ -1,0 +1,126 @@
+* {
+ margin: 0;
+ padding: 0;
+ box-sizing: border-box;
+ font-family: fantasy;
+}
+
+body {
+ margin-top: 1rem;
+}
+
+.img-container {
+ width: 100%;
+}
+
+h1 {
+ -webkit-text-stroke: .01px black;
+ color: crimson;
+ padding: 1rem;
+ margin-left: 10rem;
+}
+
+.key-container {
+ position: absolute;
+ background-color: #1e1e1e;
+ width: 15rem;
+ margin-top: 1rem;
+ right: 0;
+ top: 0;
+}
+
+.keys {
+ width: 50%;
+ float: right;
+}
+
+.button-container {
+ width: 50%;
+ height: 90%;
+ float: left;
+ text-align: center;
+}
+
+button {
+ width: 50%;
+ margin: .5rem 0;
+ padding: .6rem;
+ font-size: 1.5rem;
+ color: #1e1e1e;
+}
+
+ul li {
+ list-style-type: none;
+ margin: 1.7rem 0;
+ font-size: 2rem;
+ color: #eee;
+}
+
+h2 {
+ font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+ text-align: center;
+ padding: 1rem 0;
+ color: #eee;
+}
+
+.display {
+ position: absolute;
+ border: 1px solid black;
+ padding: .3rem .7rem;
+ font-size: 1.2rem;
+ background-color: rgb(255, 242, 121);
+}
+
+.a {
+ margin-top: 2rem;
+ margin-left: 9rem;
+}
+
+.s {
+ margin-left: 5rem;
+ margin-top: 5rem;
+}
+
+.d {
+ margin-left: 13rem;
+ margin-top: 11rem;
+}
+
+.f {
+ margin-left: 15rem;
+ margin-top: 6rem;
+}
+
+.j {
+ margin-left: 22rem;
+ margin-top: 6rem;
+}
+
+.k {
+ margin-left: 27rem;
+ margin-top: 1rem;
+}
+
+.l {
+ margin-left: 27rem;
+ margin-top: 11rem;
+}
+
+.semicolon {
+ margin-left: 18.5rem;
+ margin-top: 15rem;
+}
+
+/* Effects */
+
+.display, button:hover {
+ cursor: pointer;
+}
+
+button:active {
+ transform: scale(.9);
+}
+
+.display:active {
+ transform: scale(.9);
+}
