@@ -12,14 +12,14 @@
  <div class="main-container">
  <div class="img-container">
   <h1>Javascript Drum Kit</h1>
-  <div type="button" class="display a">a</div>
-  <div type="button" class="display s">s</div>
-  <div type="button" class="display d">d</div>
-  <div type="button" class="display f">f</div>
-  <div type="button" class="display j">j</div>
-  <div type="button" class="display k">k</div>
-  <div type="button" class="display l">l</div>
-  <div type="button" class="display semicolon">;</div>
+  <div class="display a" data-key="65">a</div>
+  <div class="display s" data-key="83">s</div>
+  <div class="display d" data-key="68">d</div>
+  <div class="display f" data-key="70">f</div>
+  <div class="display j" data-key="74">j</div>
+  <div class="display k" data-key="75">k</div>
+  <div class="display l" data-key="76">l</div>
+  <div class="display semicolon" data-key="186">;</div>
   <img src="./images/drums.jpg" alt="drum kit">
  </div>
 
@@ -52,6 +52,23 @@
  </div>
  </div>
 
+  <!-- Audio files -->
+  <!-- CRASH -->
+  <audio src="./sounds/crash.wav" data-key="65" class="sound1">
+  <!-- HI-HAT -->
+  <audio src="./sounds/hihat-open.wav" data-key="83" class="sound2">
+  <!-- SNARE -->
+  <audio src="./sounds/snare.wav" data-key="68" class="sound3">
+  <!-- HIGH TOM -->
+  <audio src="./sounds/tom-high.wav" data-key="70" class="sound4">
+  <!-- MID TOM -->
+  <audio src="./sounds/tom-mid.wav" data-key="74" class="sound5">
+  <!-- RIDE -->
+  <audio src="./sounds/ride.wav" data-key="75" class="sound6">
+  <!-- FLOOR -->
+  <audio src="./sounds/kick (1).wav" data-key="76" class="sound7">
+  <!-- KICK -->
+  <audio src="./sounds/kick.wav" data-key="186" class="sound8">
 
  <!-- javascript -->
  <script src="./index.js"></script>
