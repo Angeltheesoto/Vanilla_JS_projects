@@ -1,6 +1,4 @@
-
 // Variables
-
 const colorValue = document.querySelector('.color-val');
 const newColor = document.querySelector('.new-color');
 const answer = document.querySelector('.answer');
@@ -33,6 +31,21 @@ easyMode.addEventListener('click', () => {
  easyMode.classList.add('active');
  removeDiv()
 })
+
+// Have the RGB() change to a new color every refresh and assign that color to one of the boxes at random.
+
+
+
+
+
+// Have the boxes display completely random colors and whenever the new colors button is clicked give everything a new color.
+
+
+
+
+
+
+// Have the middle button display correct if you get it right or try again if you get it wrong.
 
 
 
