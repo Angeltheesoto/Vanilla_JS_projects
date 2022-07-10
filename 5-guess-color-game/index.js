@@ -25,6 +25,7 @@ newColor.addEventListener('click', () => {
   randomColors();
   changeColor()
   colorAssign()
+
 })
 
 hardMode.addEventListener('click', () => {
@@ -36,6 +37,7 @@ hardMode.addEventListener('click', () => {
   changeColor()
   randomColors()
   colorAssign()
+
 })
 
 easyMode.addEventListener('click', () => {
@@ -45,6 +47,7 @@ easyMode.addEventListener('click', () => {
   changeColor()
   randomColors()
   colorAssign()
+
 })
 
 // Have the RGB() change to a new color every refresh and assign that color to each of the boxes at random.
@@ -79,24 +82,42 @@ function randomRgbColor() {
 
 // have the heading rgb color assign to a random box and change the background to that color.
 
-// assigns the color displayed to the background
+// assigns the color displayed to the background, and a random square
 function colorAssign() {
-  let headContainer = document.querySelector('.head-container');
+  let correctColor = document.querySelector('.correct-color');
   let textInfo = document.getElementById('text-content');
-  headContainer.style.backgroundColor = textInfo.textContent;
+  correctColor.style.backgroundColor = textInfo.textContent;
+  square[titleColorBox()].style.backgroundColor = textInfo.textContent
 }
 colorAssign()
 
+// Chooses a random square from the list
 function titleColorBox() {
   let ranNum = Math.floor(Math.random() * (square.length)); i++;
-  
   return ranNum
-
 }
   console.log(titleColorBox())
 
+// If the color chosen matches the title rgb then create new colors else have it disappear.
 
-
+function clickSquare() {
+  for (let i = 0; i < square.length; i++) {
+  square[i].addEventListener('click', (e) => {
+    let correctColor = document.querySelector('.correct-color');
+    let answer = document.querySelector('.answer');
+      if((e.target).style.backgroundColor == correctColor.style.backgroundColor) {
+        console.log('Correct');
+        answer.style.display = 'inline-block'
+        answer.textContent = 'CORRECT'
+      } else {
+        console.log('Try again')
+        answer.style.display = 'inline-block'
+        answer.textContent = 'Try Again'
+      }
+    })
+  }
+}
+clickSquare()
 
 
 
