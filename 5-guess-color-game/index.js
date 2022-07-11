@@ -5,7 +5,7 @@ const answer = document.querySelector('.answer');
 const easyMode = document.querySelector('.easy');
 const hardMode = document.querySelector('.hard');
 let square = document.querySelectorAll('.square');
-const choices = document.querySelector('.choices-container');
+let choices = document.querySelector('.choices-container');
 
 
 // Toggle between easy and hard mode to remove or add last three boxes.
@@ -14,7 +14,7 @@ function createDiv() {
   div.setAttribute('class', 'square');
   div.style.backgroundColor = `rgb(${randomRgbColor()})`;
   choices.appendChild(div)
-  };
+};
 
 function removeDiv() {
  [...choices.children].slice(-3).forEach(choices.removeChild.bind(choices));
@@ -25,29 +25,41 @@ newColor.addEventListener('click', () => {
   randomColors();
   changeColor()
   colorAssign()
-
+  answer.style.display = 'none'
 })
 
 hardMode.addEventListener('click', () => {
   hardMode.classList.add('active');
   easyMode.classList.remove('active');
-  createDiv()
-  createDiv()
-  createDiv()
-  changeColor()
-  randomColors()
-  colorAssign()
+  answer.style.display = 'none'
 
+  if(choices.childElementCount === 6){
+    changeColor()
+    randomColors()
+    colorAssign()
+  } else {
+    changeColor()
+    randomColors()
+    colorAssign()
+    createDiv()
+    createDiv()
+    createDiv()
+  }
 })
 
 easyMode.addEventListener('click', () => {
   hardMode.classList.remove('active');
   easyMode.classList.add('active');
-  removeDiv()
   changeColor()
   randomColors()
   colorAssign()
+  answer.style.display = 'none'
 
+  if(choices.childElementCount > 3){
+    removeDiv()
+  } else {
+    return null
+  }
 })
 
 // Have the RGB() change to a new color every refresh and assign that color to each of the boxes at random.
@@ -87,6 +99,7 @@ function colorAssign() {
   let correctColor = document.querySelector('.correct-color');
   let textInfo = document.getElementById('text-content');
   correctColor.style.backgroundColor = textInfo.textContent;
+  
   square[titleColorBox()].style.backgroundColor = textInfo.textContent
 }
 colorAssign()
@@ -118,15 +131,3 @@ function clickSquare() {
   }
 }
 clickSquare()
-
-
-
-
-
-// Have the middle button display correct if you get it right or try again if you get it wrong.
-
-
-
-
-
-
