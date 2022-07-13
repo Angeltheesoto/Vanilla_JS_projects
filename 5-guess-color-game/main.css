@@ -113,7 +113,7 @@ h1 {
  background-color: #2c8e99;
 }
 
-.wiggle.animating {
+.wiggle {
  animation: shake 0.8s;
 }
 
