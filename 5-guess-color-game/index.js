@@ -6,6 +6,7 @@ const easyMode = document.querySelector('.easy');
 const hardMode = document.querySelector('.hard');
 let square = document.querySelectorAll('.square');
 let choices = document.querySelector('.choices-container');
+let headContainer = document.querySelector('.head-container');
 
 
 // Toggle between easy and hard mode to remove or add last three boxes.
@@ -13,7 +14,8 @@ function createDiv() {
   const div = document.createElement('div');
   div.setAttribute('class', 'square');
   div.style.backgroundColor = `rgb(${randomRgbColor()})`;
-  choices.appendChild(div)
+  choices.appendChild(div);
+  
 };
 
 function removeDiv() {
@@ -23,27 +25,29 @@ function removeDiv() {
 // Whenever the new colors button is clicked give everything a new color.
 newColor.addEventListener('click', () => {
   randomColors();
-  changeColor()
-  colorAssign()
-  answer.style.display = 'none'
+  changeColor();
+  colorAssign();
+  answer.style.display = 'none';
+  headContainer.style.backgroundColor = '#2c8e99';
 })
 
 hardMode.addEventListener('click', () => {
   hardMode.classList.add('active');
   easyMode.classList.remove('active');
-  answer.style.display = 'none'
+  answer.style.display = 'none';
+  headContainer.style.backgroundColor = '#2c8e99';
 
   if(choices.childElementCount === 6){
     changeColor()
     randomColors()
     colorAssign()
   } else {
-    changeColor()
+    createDiv()
+    createDiv()
+    createDiv()
     randomColors()
+    changeColor()
     colorAssign()
-    createDiv()
-    createDiv()
-    createDiv()
   }
 })
 
@@ -53,7 +57,8 @@ easyMode.addEventListener('click', () => {
   changeColor()
   randomColors()
   colorAssign()
-  answer.style.display = 'none'
+  answer.style.display = 'none';
+  headContainer.style.backgroundColor = '#2c8e99';
 
   if(choices.childElementCount > 3){
     removeDiv()
@@ -122,10 +127,11 @@ function clickSquare() {
         console.log('Correct');
         answer.style.display = 'inline-block'
         answer.textContent = 'CORRECT'
+        headContainer.style.backgroundColor = correctColor.style.backgroundColor;
       } else {
-        console.log('Try again')
-        answer.style.display = 'inline-block'
-        answer.textContent = 'Try Again'
+        console.log('Try again');
+        answer.style.display = 'inline-block';
+        answer.textContent = 'Try Again';
       }
     })
   }
