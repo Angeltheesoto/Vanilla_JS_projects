@@ -4,9 +4,34 @@
  <meta charset="UTF-8">
  <meta http-equiv="X-UA-Compatible" content="IE=edge">
  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+ <link rel="stylesheet" href="./main.css">
  <title>Hangman</title>
 </head>
 <body>
  
+ <h1>HANGMAN</h1>
+ <h2>Vanilla Javascript Hangman Game</h2>
+ <hr>
+ <p id="category">This is the Category</p>
+
+ <canvas id="stickman">
+  This Text will show if the Browser does NOT support HTML5 Canvas tag
+ </canvas>
+ <p id="clue">Clue: <span>Click hint to reveal</span></p>
+ <p id="word">This is the word. _ _ _</p>
+ <hr>
+ <h3>Use the alphabet below to guess the word, or click hint to get a clue.</h3>
+ <div id="btn-container">
+  <div id="buttons">
+   <button type="button" class="alphabetBtn">a</button>
+   <button type="button" class="alphabetBtn">a</button>
+  </div>
+ </div>
+ <div id="play-container">
+  <button type="button" id="hint bottomBtn">Hint</button>
+  <button type="button" id="play bottomBtn">Play Again</button>
+ </div>
+
+ <script src="./index.js"></script>
 </body>
 </html>
