@@ -63,6 +63,7 @@ h3 {
 
 .alphabetBtn {
  border: 1px solid white;
+ /* backgroundc: ; */
  padding: 3px 10px 7px;
  border-radius: 5px;
  cursor: pointer;
