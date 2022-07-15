@@ -3,9 +3,13 @@ const category = document.getElementById('category');
 const stickman = document.getElementById('stickman');
 const clue = document.getElementById('clue');
 const word = document.getElementById('word');
-const btnContainer = document.getElementById('buttons');
+let btnContainer = document.getElementById('buttons');
 const hint = document.querySelector('.hint');
 const playAgain = document.querySelector('.play');
+let preWord = document.querySelector('.word');
+let answer = document.querySelector('.answer');
+// let alphabetBtn = document.querySelector(".alphabetBtn");
+
 
 // Elements
 let btn = document.createElement("button");
@@ -34,7 +38,7 @@ function hangmanGame() {
    const keys = Object.keys(para);
    return keys[Math.floor(Math.random() * keys.length)];
  }
- // lets me change that key or value to call it.
+ // lets you change that key or value to call it.
  function randomWord() {
   let randomWord = wordAndHint[getRandomProperty(wordAndHint)].word;
   return randomWord
@@ -49,22 +53,38 @@ function hangmanGame() {
 
  // Make the word show each part of it as an underscore _
  function underscore() {
-  let theWord = word.innerHTML;
-  for(let i in theWord){
-   return theWord[i]
-   // console.log(`<li>${theWord[i]}</li>`)
-  }
+  let theWord = preWord.innerHTML;
+  let answer = document.querySelector('.answer');
+  [...theWord].forEach((c) => {
+   answer.innerHTML += `<li>${c}</li>`;
+   word.innerHTML += `<li>${c = '_'}</li>`;
+  });
  }
-// COMEBACK - trying to get each letter to display as an underscore.
- let newFun = () => {
-  word.textContent = underscore()
+
+ // Whenever a button is clicked locate and reveal those letters
+ function btnLoopDisplay() {
+  
+let alphabetBtn = document.querySelectorAll(".alphabetBtn");
+
+alphabetBtn.forEach((list) => { 
+   list.addEventListener('click', () => {
+    // HERE! - Make the letter clicked display to the console.
+    console.log(`${'clicked'}`)
+  })
+ })
+
  }
+btnLoopDisplay()
+
 
  // Play again button
  playAgain.addEventListener('click', () => {
-  word.textContent = randomWord();
+  preWord.innerHTML = randomWord();
+  preWord.style.display = 'none'
   clue.textContent = 'Clue: Click hint to reveal';
-  newFun()
+  answer.textContent = ''; 
+  word.innerHTML = '';
+  underscore()
  })
 
 // Hint reveal button

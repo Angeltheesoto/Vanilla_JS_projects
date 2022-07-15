@@ -42,7 +42,7 @@ canvas {
  height: 20rem;
 }
 
-#clue, #word {
+#clue, #word, .word {
  color: white;
  margin-bottom: .5rem;
  font-size: 1.7rem;
@@ -95,4 +95,16 @@ h3 {
  transition: .5s all ease-in-out;
  background-color: white;
  color: rgb(111, 187, 192);
+}
+
+ul {
+ width: 20rem;
+ height: auto;
+ margin: 0 auto;
+}
+
+li {
+ display: inline;
+ list-style-type: none;
+ margin-right: 10px;
 }
